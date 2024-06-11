@@ -5,12 +5,12 @@
 #include "Bureaucrat.hpp"
 	class Form {
 		private:
-			const std::string &name;
+			const std::string name;
 			bool isSigned;
 			const int gradeToSign;
 			const int gradeToExecute;
 		public:
-			Form(const std::string &name = "Default Value", bool isSigned = false, int gradeToSign = 2, int gradeToExecute = 2);
+			Form(const std::string name = "Default Value", bool isSigned = false, int gradeToSign = 2, int gradeToExecute = 2);
 			Form(const Form &other);
 			~Form();
 			Form &operator=(const Form &other);

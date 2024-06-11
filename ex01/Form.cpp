@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(const std::string &formName, bool isSigned, int gradeToSign, int gradeToExecute) : name(formName), isSigned(isSigned), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
+Form::Form(const std::string formName, bool isSigned, int gradeToSign, int gradeToExecute) : name(formName), isSigned(isSigned), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)

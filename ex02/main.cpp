@@ -1,12 +1,15 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
 #include <iostream>
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
-{
-	{
+{ {
 		Bureaucrat *john = NULL;
-		try {
+		try
+		{
 			john = new Bureaucrat("John", 2);
 			std::cout << *john << std::endl;
 			john->incrementGrade();
@@ -14,18 +17,20 @@ int main()
 			john->decrementGrade();
 			std::cout << *john << std::endl;
 		}
-		catch (Bureaucrat::GradeTooHighException &e) {
+		catch (Bureaucrat::GradeTooHighException &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
-		catch (Bureaucrat::GradeTooLowException &e) {
+		catch (Bureaucrat::GradeTooLowException &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
 		std::cout << std::endl;
 		if (john != NULL)
 			delete john;
-	}
-	{
-		try {
+	} {
+		try
+		{
 			Bureaucrat lennon("Lennon");
 			std::cout << lennon << std::endl;
 			lennon.incrementGrade();
@@ -33,27 +38,51 @@ int main()
 			lennon.decrementGrade();
 			std::cout << lennon << std::endl;
 		}
-		catch (Bureaucrat::GradeTooHighException &e) {
+		catch (Bureaucrat::GradeTooHighException &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
-		catch (Bureaucrat::GradeTooLowException &e) {
+		catch (Bureaucrat::GradeTooLowException &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
 		std::cout << std::endl;
-	}
-	{
-		try {
-			Form form("Kurt", false, 1, 2);
-			std::string name = "Cobain";
-			Bureaucrat bureaucrat = Bureaucrat(name, 1);
-			std::cout << form << std::endl;
-			bureaucrat.signForm(form);
-			std::cout << form << std::endl;
+	} {
+		try
+		{
+			Bureaucrat lennon("Lennon 2", 100);
+			PresidentialPardonForm presidential("SKAH");
+			lennon.signForm(presidential);
+			presidential.execute(lennon);
 		}
-		catch (Bureaucrat::GradeTooHighException &e) {
+		catch (std::exception &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
-		catch (Bureaucrat::GradeTooLowException &e) {
+		std::cout << std::endl;
+	} {
+		try
+		{
+			Bureaucrat lennon("Lennon 3", 1);
+			RobotomyRequestForm form("TA");
+			lennon.signForm(form);
+			form.execute(lennon);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+	} {
+		try
+		{
+			Bureaucrat lennon("Lennon 4", 1);
+			ShrubberyCreationForm form("MA");
+			lennon.signForm(form);
+			form.execute(lennon);
+		}
+		catch (std::exception &e)
+		{
 			std::cout << e.what() << std::endl;
 		}
 		std::cout << std::endl;

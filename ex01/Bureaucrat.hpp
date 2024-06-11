@@ -5,7 +5,7 @@
 #include <ostream>
 	class Bureaucrat {
 		private:
-			const std::string &name;
+			const std::string name;
 			int grade;
 		public:
 			class GradeTooHighException : public std::exception {
@@ -17,7 +17,7 @@
 				virtual const char *what() const throw();
 			};
 
-			Bureaucrat(const std::string &name = "Default Value", int grade = 2);
+			Bureaucrat(const std::string name = "Default Value", int grade = 2);
 			Bureaucrat(const Bureaucrat &other);
 			~Bureaucrat();
 			Bureaucrat &operator=(const Bureaucrat &other);
