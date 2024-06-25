@@ -86,5 +86,17 @@ int main()
 			std::cout << e.what() << std::endl;
 		}
 		std::cout << std::endl;
+	} {
+		try
+		{
+			RobotomyRequestForm form("Robotomy");
+			Bureaucrat officer("Offier", 1);
+			form.execute(officer);
+			officer.executeForm(form);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 }
