@@ -50,7 +50,7 @@ const char *Intern::FormNotFoundException::what() const throw()
 	return "Sorry, the form doesn't exists !";
 }
 
-AForm *Intern::makeForm(std::string &name, std::string &target)
+AForm *Intern::makeForm(std::string &name, std::string &target) throw(FormNotFoundException)
 {
 	size_t i = 0;
 
