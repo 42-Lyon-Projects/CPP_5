@@ -90,7 +90,7 @@ int main()
 		try
 		{
 			RobotomyRequestForm form("Robotomy");
-			Bureaucrat officer("Offier", 1);
+			Bureaucrat officer("officer", 1);
 			form.execute(officer);
 			officer.executeForm(form);
 		}

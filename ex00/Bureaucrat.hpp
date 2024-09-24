@@ -25,7 +25,7 @@ class Bureaucrat {
 			virtual const char *what() const throw();
 		};
 
-		void incrementGrade()throw(Bureaucrat::GradeTooHighException);
+		void incrementGrade() throw(Bureaucrat::GradeTooHighException);
 		void decrementGrade() throw(Bureaucrat::GradeTooLowException);
 };
 
